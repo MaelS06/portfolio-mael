@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diplômes | Portfolio Mael</title>
+  <meta name="description" content="Diplômes et preuves de formation de Mael : brevet, baccalauréat et certifications." />
+  <meta name="author" content="Mael SASORITH" />
+  <meta name="theme-color" content="#3158ff" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Portfolio Mael SASORITH" />
+  <meta property="og:title" content="Diplômes | Portfolio Mael" />
+  <meta property="og:description" content="Diplômes et preuves de formation de Mael : brevet, baccalauréat et certifications." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="top">
+  <input type="checkbox" id="theme-toggle" />
+  <input type="checkbox" id="nav-toggle" />
+  <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+  <div class="portfolio-loader" aria-hidden="true">
+    <div class="loader-card">
+      <div class="loader-logo">M</div>
+      <p>Chargement du portfolio</p>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <a href="index.html#top" class="logo" aria-label="Retour à l'accueil"><span>M</span> Mael SASORITH</a>
+
+    <label for="nav-toggle" class="nav-button" aria-label="Ouvrir ou fermer le menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html#accueil">Accueil</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="parcours.html">Parcours</a>
+      <a href="diplomes.html" class="menu-page" aria-current="page">Diplômes</a>
+      <a href="experiences.html">Expériences</a>
+      <a href="index.html#competences">Compétences</a>
+      <a href="projets.html">SAE</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="top-actions">
+      <label for="theme-toggle" class="theme-button">
+        <span class="light-label">Mode noir</span>
+        <span class="dark-label">Mode blanc</span>
+      </label>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="section page-hero">
+      <div class="hero-content reveal">
+        <p class="eyebrow">Diplômes</p>
+        <h1>Mes diplômes <span>Un espace dédié pour ajouter les photos du brevet, du bac et d’autres attestations.</span></h1>
+        <div class="page-nav-mini"><a href="#brevet">Brevet</a><a href="#bac">Baccalauréat</a><a href="#certification">Autre preuve</a></div>
+      </div>
+    </section>
+
+    <section class="section diploma-section">
+      <div class="diploma-grid">
+        <article id="bac" class="diploma-card reveal">
+          <div class="diploma-header">
+            <span class="diploma-icon">🎓</span>
+            <div>
+              <p class="detail-meta">Lycée Louis Couffignal · Strasbourg</p>
+              <h2>Baccalauréat STI2D</h2>
+              <p>Mention Très Bien</p>
+            </div>
+          </div>
+          <figure class="diploma-dropzone diploma-pdf">
+            <iframe 
+              src="assets/diplomes/SASORITH_MAEL_BACCALAURÉAT.pdf"
+              title="Diplôme du baccalauréat STI2D de Mael"
+            ></iframe>
+          </figure>
+        </article>
+
+        <article id="brevet" class="diploma-card reveal">
+          <div class="diploma-header">
+            <span class="diploma-icon">🎓</span>
+            <div>
+              <p class="detail-meta">Collège des Cigognes · Gerstheim</p>
+              <h2>Diplôme National du Brevet</h2>
+              <p>Mention Très Bien</p>
+            </div>
+          </div>
+
+          <figure class="diploma-dropzone diploma-pdf">
+            <iframe
+              src="assets/diplomes/Brevet collèges .pdf"
+              title="Diplôme National du Brevet de Mael"
+            ></iframe>
+          </figure>
+        </article>
+      </div>
+    </section>
+  </main>
+  <a href="#top" class="back-top" aria-label="Retour en haut">↑</a>
+  <footer class="footer">
+    <p>© 2026 · Portfolio Mael · BUT Réseaux & Télécommunications</p>
+  </footer>
+</body>
+</html>
