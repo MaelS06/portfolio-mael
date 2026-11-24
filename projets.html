@@ -149,6 +149,13 @@
           <span>Compétence : Administrer · Connecter · Programmer</span>
           <a href="#sae204" class="btn btn-small">Développer le projet</a>
         </article>
+        <article class="card project-card project-case-card reveal">
+          <div class="case-card-top"><span class="case-card-icon">🚦</span><span class="case-code">SAE3.02</span></div>
+          <h3>Carrefour intelligent V2X</h3>
+          <p>Simulation d’une intersection connectée avec priorité aux véhicules de secours, communication TCP et interface graphique Python.</p>
+          <span>Compétence : Programmer · Connecter</span>
+          <a href="#sae302" class="btn btn-small">Développer le projet</a>
+        </article>
         </div>
       </section>
     </section>
@@ -704,6 +711,107 @@
           </section>
           <section class="modal-section case-actions">
               <a href="#" class="case-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </section>
+        </div>
+      </article>
+    </aside>
+    <aside id="sae302" class="project-modal case-modal" aria-labelledby="title-sae302">
+      <a href="#liste-projets" class="modal-backdrop" aria-label="Fermer le projet"></a>
+      <article class="modal-panel case-panel">
+        <header class="modal-header case-header">
+          <div class="modal-icon">🚦</div>
+          <div>
+            <h2 id="title-sae302">Carrefour intelligent V2X</h2>
+            <p>Novembre 2026 · Binôme · S3 · SAE3.02</p>
+          </div>
+          <a href="#liste-projets" class="modal-close" aria-label="Fermer">×</a>
+        </header>
+        <div class="modal-body case-body">
+          <section class="modal-section">
+            <h3>🧠 Contexte</h3>
+            <p>Dans le cadre de notre deuxième année de BUT Réseaux et Télécommunications à l’IUT de Colmar, nous avons conçu avec Alexandre Kientz (équipe ProxmoxVE) une simulation de carrefour connecté. Le V2X (Vehicle-to-Everything) permet aux véhicules de communiquer avec leur environnement. Notre objectif était de réduire le temps de passage des véhicules de secours tout en sécurisant la circulation des autres usagers.</p>
+          </section>
+          <section class="modal-section">
+            <h3>🎯 Problématique</h3>
+            <p>Comment organiser la circulation à une intersection pour laisser passer rapidement une ambulance sans bloquer les véhicules déjà engagés ni provoquer de collision ? Notre maquette propose une adaptation temporaire du cycle des feux en fonction de l’urgence.</p>
+          </section>
+          <section class="modal-section">
+            <h3>🛠 Réalisations techniques</h3>
+            <p>Notre application Python repose sur une architecture client-serveur utilisant des sockets TCP sur le port 6000. Le serveur joue le rôle de relais entre les différents programmes.</p>
+            <ul>
+              <li><strong>Serveur :</strong> centralisation de l’état des feux et des positions, contrôle de l’espacement des véhicules et gestion des connexions simultanées avec des threads.</li>
+              <li><strong>Carrefour :</strong> représentation graphique en deux dimensions avec PyQt6 et QGraphicsScene, gestion du cycle des feux et affichage des déplacements.</li>
+              <li><strong>Clients véhicules :</strong> choix d’une trajectoire, consultation des feux et demande d’autorisation de déplacement auprès du serveur.</li>
+              <li><strong>Client prioritaire :</strong> simulation d’une ambulance circulant dans un couloir réservé.</li>
+            </ul>
+            <p>Les échanges s’appuient sur un protocole textuel : GET_FEU permet de consulter la phase des feux, tandis que les messages de position reçoivent une réponse OK ou STOP. Les informations sont relayées à l’interface pour actualiser la scène.</p>
+          </section>
+          <section class="modal-section">
+            <h3>🚑 Fonctionnement en cas d’urgence</h3>
+            <ul>
+              <li><strong>Dégagement :</strong> durant quatre secondes, les feux passent au vert, la génération de nouveaux véhicules s’arrête et la signalisation avertit les usagers afin de permettre l’évacuation de l’intersection.</li>
+              <li><strong>Sécurisation :</strong> les feux passent au rouge et les véhicules se rangent à droite pour libérer un passage.</li>
+              <li><strong>Traversée :</strong> l’ambulance emprunte le couloir dégagé depuis une branche choisie aléatoirement.</li>
+            </ul>
+            <p>Un chronomètre mesure la durée de l’urgence. Les interventions sont enregistrées dans MySQL pour consulter leur nombre, leur durée moyenne et maximale ainsi que leur répartition par direction.</p>
+          </section>
+          <section class="modal-section">
+            <h3>👤 Ma contribution personnelle</h3>
+            <p>Je suis intervenu aussi bien dans l’organisation du projet que dans sa réalisation technique.</p>
+            <ul>
+              <li>Réalisation du QQOQCP (Qui ? Quoi ? Où ? Quand ? Comment ? Pourquoi ?) afin de cadrer le sujet et de préciser les objectifs.</li>
+              <li>Rédaction de l’ensemble des comptes rendus pour garder une trace de notre progression et des décisions prises.</li>
+              <li>Participation à l’écriture du code Python, notamment aux fonctionnalités liées à l’affichage du carrefour.</li>
+              <li>Contribution aux différentes tâches de développement en collaboration avec mon binôme.</li>
+            </ul>
+          </section>
+          <section class="modal-section">
+            <h3>⚙ Technologies</h3>
+            <div class="tags">
+              <span>Python 3.14</span><span>Sockets TCP</span><span>Threading</span><span>PyQt6</span><span>QGraphicsScene</span><span>QTimer</span><span>QtMultimedia</span><span>MySQL</span><span>Git / GitHub</span><span>PyCharm</span>
+            </div>
+          </section>
+          <section class="modal-section">
+            <h3>🎓 Compétences R&amp;T mobilisées</h3>
+            <ul>
+              <li>Développer une application communicante en Python.</li>
+              <li>Mettre en œuvre une architecture client-serveur et un protocole applicatif TCP.</li>
+              <li>Comprendre la gestion des traitements concurrents.</li>
+              <li>Participer à la conception d’une interface graphique.</li>
+              <li>Organiser et documenter un projet technique en équipe.</li>
+              <li>Collaborer sur un dépôt de code partagé.</li>
+            </ul>
+          </section>
+          <section class="modal-section">
+            <h3>🖼 Schéma d’architecture</h3>
+            <figure class="case-shot">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 390" role="img" aria-labelledby="v2x-diagram-title v2x-diagram-desc" style="display:block;width:100%;height:auto;color:var(--text);background:var(--bg-soft);border-radius:16px">
+                <title id="v2x-diagram-title">Architecture client-serveur V2X</title>
+                <desc id="v2x-diagram-desc">Les véhicules civils, l’ambulance et le carrefour communiquent dans les deux sens avec le serveur central via TCP sur le port 6000.</desc>
+                <defs><marker id="v2x-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></marker></defs>
+                <g fill="var(--bg-card)" stroke="var(--primary)" stroke-width="2">
+                  <rect x="24" y="24" width="254" height="76" rx="16"/><rect x="322" y="24" width="254" height="76" rx="16"/>
+                  <rect x="150" y="151" width="300" height="90" rx="16" fill="var(--bg-soft)"/>
+                  <rect x="150" y="293" width="300" height="76" rx="16"/>
+                </g>
+                <g stroke="currentColor" stroke-width="2" fill="none" marker-start="url(#v2x-arrow)" marker-end="url(#v2x-arrow)">
+                  <path d="M151 106 V124 H229 V145"/><path d="M449 106 V124 H371 V145"/><path d="M300 247 V287"/>
+                </g>
+                <g text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif">
+                  <g font-size="20" font-weight="700"><text x="151" y="55">Véhicules civils</text><text x="449" y="55">Ambulance</text><text x="300" y="183">Serveur central V2X</text><text x="300" y="324">Carrefour connecté</text></g>
+                  <g font-size="16"><text x="151" y="79">Clients autonomes</text><text x="449" y="79">Client prioritaire</text><text x="300" y="207">TCP · Port 6000</text><text x="300" y="226">Coordination des échanges</text><text x="300" y="348">Interface PyQt6 · Feux</text></g>
+                  <g font-size="13"><text x="104" y="128">TCP</text><text x="496" y="128">TCP</text><text x="327" y="270">TCP</text></g>
+                </g>
+              </svg>
+              <figcaption>Architecture simplifiée des échanges réseau de notre application.</figcaption>
+            </figure>
+          </section>
+          <section class="modal-section">
+            <h3>💡 Bilan réflexif personnel</h3>
+            <p>Cette SAÉ m’a permis de découvrir un projet dans lequel la programmation et les réseaux sont directement liés. En participant au développement de l’affichage, j’ai pu mieux comprendre comment les informations échangées entre les programmes se traduisent visuellement dans la simulation. Le QQOQCP et les comptes rendus m’ont également montré l’importance de définir clairement les objectifs et de suivre régulièrement l’avancement du travail. Cette expérience m’a aidé à développer ma polyvalence et à mieux collaborer sur un projet commun.</p>
+          </section>
+          <section class="modal-section case-actions">
+            <a href="https://github.com/juju2303/SAE-3.02" class="case-link" target="_blank" rel="noopener noreferrer">Voir le code source sur GitHub</a>
           </section>
         </div>
       </article>
